@@ -1,9 +1,5 @@
 # Lab 2: Creating a Virtual SD Card for Embedded Linux Development
 
-This document provides the solutions, commands, and theoretical explanations for Lab 2.
-
----
-
 ## 1. Create a 1 GiB Virtual Disk Image
 
 ### Task
@@ -75,8 +71,9 @@ cfdisk sd.img
 1. Select **DOS** label type.
 2. Create **New → 200M → Primary → Bootable**.
 3. Set **Type → FAT16**.
-4. Select free space → **New → Primary → (use remaining space)**.
-5. **Write → type "yes" → Quit**.
+4. Select free space → **New → Extended → (use remaining space)**.
+5. Set **Type → Linux**.
+6. **Write → type "yes" → Quit**.
 
 ---
 
