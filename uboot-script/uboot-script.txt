@@ -1,0 +1,15 @@
+setenv LoadFromTftp \
+'if tftp $kernel_addr_r; \
+then echo "image found"; \
+else echo "image not found"; \
+fi'
+
+run LoadFromTftp
+
+# Or:
+
+# if tftp $kernel_addr_r; then
+#     echo "image found";
+# else
+#     echo "image not found";
+# fi

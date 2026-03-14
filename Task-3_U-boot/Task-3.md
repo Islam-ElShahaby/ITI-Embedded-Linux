@@ -45,23 +45,28 @@ Linux Kernel
 The GPU starts execution before the ARM CPU.
 
 **2. BootROM**  
+
 - Hardcoded inside the GPU.
 - Reads the SD card.
 - Loads the second-stage bootloader.
 
 **3. bootcode.bin**  
+
 - Initializes SDRAM.
 - Loads the GPU firmware.
 
 **4. start.elf**  
+
 - Main GPU firmware.
 - Reads system configuration from `config.txt`.
 - Loads the next stage.
 
 **5. U-Boot**  
--  U-Boot is loaded and the loads the Linux Kernel.
+
+- U-Boot is loaded and the loads the Linux Kernel.
 
 **6. Linux Kernel**  
+
 - Initializes the operating system.
 - Mounts the root filesystem.
 - Starts user-space processes.
@@ -91,17 +96,21 @@ Linux Kernel     Windows Bootloader
 ### Explanation
 
 **1. BIOS / UEFI**  
+
 - Performs POST (Power-On Self-Test).
 - Initializes hardware components.
 
 **2. MBR / GPT**  
+
 - Contains partition table and bootloader location.
 
 **3. GRUB Bootloader**  
+
 - Loads Linux kernel and initramfs.
 - Provides boot selection menu.
 
 **4. Linux Kernel**  
+
 - Initializes system.
 - Starts init system.
 
@@ -142,7 +151,7 @@ Example:
 bcm2710-rpi-3-b-plus.dtb
 ```
 
-### When it is loaded:
+### When it is loaded
 
 - Usually loaded by the GPU firmware (`start.elf`) before U-Boot starts.
 - Alternatively, U-Boot can load it manually before booting the kernel.
@@ -260,7 +269,7 @@ Example:
 bootargs=console=ttyS0 root=/dev/mmcblk0p2 rw
 ```
 
-### Purpose:
+### Purpose
 
 - Passed from U-Boot to Linux kernel.
 - Used by the kernel to configure:
@@ -275,7 +284,7 @@ bootargs=console=ttyS0 root=/dev/mmcblk0p2 rw
 
 Kernel load addresses must avoid memory conflicts.
 
-### Reasons:
+### Reasons
 
 **1. Avoid Memory Overlap**  
 The kernel requires space for:
